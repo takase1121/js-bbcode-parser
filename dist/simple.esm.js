@@ -54,7 +54,12 @@ class BBCode {
 
 }
 
-var simple = new BBCode({
+var BBCode$1 = {
+  BBCode,
+  DefaultParser
+};
+
+var DefaultParser = new BBCode$1({
   '\\[br\\]': '<br>',
   '\\[b\\](.+?)\\[/b\\]': '<strong>$1</strong>',
   '\\[i\\](.+?)\\[/i\\]': '<em>$1</em>',
@@ -81,5 +86,5 @@ var simple = new BBCode({
   '\\[\\*\\](.+?)\\[/\\*\\]': '<li>$1</li>'
 });
 
-export default simple;
+export default DefaultParser;
 //# sourceMappingURL=simple.esm.js.map

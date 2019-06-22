@@ -94,7 +94,12 @@
     return BBCode;
   }();
 
-  var simple = new BBCode({
+  var BBCode$1 = {
+    BBCode: BBCode,
+    DefaultParser: DefaultParser
+  };
+
+  var DefaultParser = new BBCode$1({
     '\\[br\\]': '<br>',
     '\\[b\\](.+?)\\[/b\\]': '<strong>$1</strong>',
     '\\[i\\](.+?)\\[/i\\]': '<em>$1</em>',
@@ -121,7 +126,7 @@
     '\\[\\*\\](.+?)\\[/\\*\\]': '<li>$1</li>'
   });
 
-  return simple;
+  return DefaultParser;
 
 }));
 //# sourceMappingURL=simple.js.map
