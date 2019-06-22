@@ -46,9 +46,9 @@ export default [
     {
         input:   './src/index.js',
         output:  {
-            file:      './dist/parser.min.js',
+            file:      './dist/index.min.js',
             format:    'umd',
-            name:      'BBCode',
+			name:      'BBCode',
             compact:   true,
             sourcemap: true,
         },
@@ -64,9 +64,9 @@ export default [
     {
         input:   './src/index.js',
         output:  {
-            file:      './dist/parser.js',
+            file:      './dist/index.js',
             format:    'umd',
-            name:      'BBCode',
+			name:      'BBCode',
             compact:   false,
             sourcemap: true,
         },
@@ -80,7 +80,7 @@ export default [
     {
         input:   './src/index.js',
         output:  {
-            file:      './dist/parser.esm.min.js',
+            file:      './dist/index.esm.min.js',
             format:    'esm',
             compact:   true,
             sourcemap: true,
@@ -96,7 +96,7 @@ export default [
     {
         input:   './src/index.js',
         output:  {
-            file:      './dist/parser.esm.js',
+            file:      './dist/index.esm.js',
             format:    'esm',
             compact:   false,
             sourcemap: true,
@@ -162,6 +162,71 @@ export default [
         input:   './src/simple.js',
         output:  {
             file:      './dist/simple.esm.js',
+            format:    'esm',
+            compact:   false,
+            sourcemap: true,
+        },
+        plugins: [
+            resolve(),
+            progress(progressOptions),
+            babel(babelOptionsES2018),
+        ]
+    },
+	// ES2015 Minified
+    {
+        input:   './src/BBCode.js',
+        output:  {
+            file:      './dist/parser.min.js',
+            format:    'umd',
+            name:      'BBCode',
+            compact:   true,
+            sourcemap: true,
+        },
+        plugins: [
+            resolve(),
+            clear({targets: ['./dist']}),
+            progress(progressOptions),
+            babel(babelOptionsES2015),
+            terser(terserOptions),
+        ]
+    },
+    // ES2015 None-Minified
+    {
+        input:   './src/BBCode.js',
+        output:  {
+            file:      './dist/parser.js',
+            format:    'umd',
+            name:      'BBCode',
+            compact:   false,
+            sourcemap: true,
+        },
+        plugins: [
+            resolve(),
+            progress(progressOptions),
+            babel(babelOptionsES2015),
+        ]
+    },
+    // ES Modules Minified
+    {
+        input:   './src/BBCode.js',
+        output:  {
+            file:      './dist/parser.esm.min.js',
+            format:    'esm',
+            compact:   true,
+            sourcemap: true,
+        },
+        plugins: [
+            resolve(),
+            progress(progressOptions),
+            babel(babelOptionsES2018),
+            terser(terserOptions),
+        ]
+    },
+    // ES Modules None-Minified
+    {
+        input:   './src/BBCode.js',
+        output:  {
+            file:      './dist/parser.esm.js',
             format:    'esm',
             compact:   false,
             sourcemap: true,
