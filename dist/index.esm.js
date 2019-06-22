@@ -54,7 +54,7 @@ class BBCode {
 
 }
 
-var DefaultParser = new BBCode$1({
+var DefaultParser = new BBCode({
   '\\[br\\]': '<br>',
   '\\[b\\](.+?)\\[/b\\]': '<strong>$1</strong>',
   '\\[i\\](.+?)\\[/i\\]': '<em>$1</em>',
@@ -81,10 +81,10 @@ var DefaultParser = new BBCode$1({
   '\\[\\*\\](.+?)\\[/\\*\\]': '<li>$1</li>'
 });
 
-var BBCode$1 = {
+var index = {
   BBCode,
   DefaultParser
 };
 
-export default BBCode$1;
+export default index;
 //# sourceMappingURL=index.esm.js.map

@@ -1,4 +1,4 @@
-import BBCode from './index.js';
+import BBCode from './BBCode.js';
 
 export default new BBCode({
     '\\[br\\]': '<br>',

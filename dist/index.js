@@ -94,7 +94,7 @@
     return BBCode;
   }();
 
-  var DefaultParser = new BBCode$1({
+  var DefaultParser = new BBCode({
     '\\[br\\]': '<br>',
     '\\[b\\](.+?)\\[/b\\]': '<strong>$1</strong>',
     '\\[i\\](.+?)\\[/i\\]': '<em>$1</em>',
@@ -121,12 +121,12 @@
     '\\[\\*\\](.+?)\\[/\\*\\]': '<li>$1</li>'
   });
 
-  var BBCode$1 = {
+  var index = {
     BBCode: BBCode,
     DefaultParser: DefaultParser
   };
 
-  return BBCode$1;
+  return index;
 
 }));
 //# sourceMappingURL=index.js.map
